@@ -1,8 +1,10 @@
-.body{    
-    background: lightblue;
+circle
+{
+    fill: rgb(12, 1, 1) ;
 }
 
-canvas{
-    background: rgb(255, 255, 255);
-    margin:20px;
+path
+{
+    fill:none;
+    stroke:blue;
 }

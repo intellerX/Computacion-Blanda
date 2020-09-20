@@ -21,8 +21,9 @@
  // Simbols
  var F = ["U", "D", "L", "R"];
  var poblation = [];
+
  var poblationSize = 5;
- var epocas = 3;
+ var epocas = 2;
 
 
  var size = 25;
@@ -218,25 +219,40 @@ function MixMutateChromosomes(a,b){
     newChromosome1 = newChromosome1.concat(a.substr(0,14) , b.substr(14,24));
     newChromosome2 = newChromosome2.concat(b.substr(14,24) , a.substr(0,14));
 
+
+    var mutation1 = "";
+    var mutation2 = "";
+
     var firstGen = newChromosome1.charAt(0);
     var secondGen = newChromosome2.charAt(24);
 
-    winner = "";
-    winner2 = "";
+    mutation1 = mutation1.concat(secondGen , newChromosome2.substr(1,24));
+    mutation2 = mutation2.concat( newChromosome1.substr(0,23) , firstGen);
 
-    winner = winner.concat(secondGen , newChromosome2.substr(1,24));
-    winner2 = winner2.concat( newChromosome1.substr(0,23) , firstGen);
-
-    //window.alert("Segundo ganador: " + winner);
-
-    poblation[0] = winner;
-    poblation[1] = winner2;
-    
     for (let y = 2; y < poblationSize; y++){
         poblation[y] = CreateChromosome();       
     }
 
-    return winner;
+    if(getPoints(winner) > getPoints(mutation1))
+    {
+        if (getPoints(winner) > getPoints(mutation2)) {
+            poblation[0] = winner;
+            poblation[1] = b;
+            return winner;        
+        }
+        else {
+            poblation[0] = mutation2;
+            poblation[1] = b;
+            return mutation2;
+        }
+    }
+    else{
+        poblation[0] = mutation1;
+        poblation[1] = b;
+        return mutation1;
+    }   
+    
+
 
 }
 function setDefaultBoard(){
@@ -256,7 +272,7 @@ function roulette(){
     
     for (let i = 1; i < epocas + 1; i++) {
         
-        document.write("<br/> <h1>Población "+(i)+"</h1>");
+        document.write("<br/> <h1>Epoca "+(i)+"</h1>");
         for (var x = 0; x <= poblationSize ; x++){
             setDefaultBoard();
             ShowPoints(poblation[x]);
@@ -274,14 +290,14 @@ function roulette(){
         // window.alert("Segundo ganador: " + winner2);
         winner = MixMutateChromosomes(winner,winner2);
         // window.alert("Ganador: " + winner);
-        setDefaultBoard();
-        MoveInBoard(winner);
+        
         
     }
 
     
 
-
+    setDefaultBoard();
+    MoveInBoard(winner);
     document.write("Mejor puntuación: " + totalPoints + ", Individuo ganador: " + winner);
     
 
