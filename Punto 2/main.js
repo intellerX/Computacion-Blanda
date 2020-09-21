@@ -1,5 +1,5 @@
 // Simbols
-var poblation = ["NaObaacOAbbcca", "AaNcbbaNcOaacc", "OONcbbbNcbcbca", "ANNcaacNcObaab" , "AbObcbOAacaac"];
+var poblation = ["AbObcbcOAacaac", "AaNcbbaNcOaacc", "OONcbbbNcbcbca", "ANNcaacNcObaab" , "AbObcbOAacaac"];
 // ["A", "O", "N" , "a", "b", "c"];
 var a=0,b=0,c=0 , y=0;
 
@@ -85,11 +85,12 @@ function is2Operator(a){
         return false;    
  }
 
-function getResult(vector , vector2 , muestra){
-    for (let i = 14; i >=0; i--) {
+function operateVector(vector){
+    for (let i = vector.length; i >=0; i--) {
         
         if (vector[i] == "A") {
-            if (is2Operator(vector[i-1])) {
+            // Case OA
+            if (is2Operator(vector[i-1] ) || i == 0) {
                 vector[i] = (vector[i+1] && vector[i+2]);
             }
             else
@@ -99,7 +100,8 @@ function getResult(vector , vector2 , muestra){
                         
         } 
         if (vector[i] == "O") {
-            if (is2Operator(vector[i-1])) {
+            //Case AO
+            if (is2Operator(vector[i-1]) || i == 0 ) {
                 vector[i] = (vector[i+1] || vector[i+2]);
             }
             else
@@ -116,28 +118,34 @@ function getResult(vector , vector2 , muestra){
             }
         }        
     }
+    return vector;
+}
 
-    for (let i = 14; i >=0; i--) {
-        
-        if (vector2[i] == "A") {
-            vector2[i] = (vector2[i+1] && vector2[i+2]);            
-        } 
-        if (vector2[i] == "O") {
-            vector2[i] = (vector2[i+1] || vector2[i+2]);            
-        }
-        if (vector2[i] == "N") {
-            if (vector2[i+1] == "1") {
-                vector2[i] = "0";
-            }
-            if (vector2[i+1] == "0") {
-                vector2[i] = "1";
-            }
-        }        
-    }
+function getResult(vector , vector2 , muestra){
+
+    vector = operateVector(vector);
+    vector2 = operateVector(vector2);
+
+    var resultV1 = vector[0];
+    var resultV2 = vector2[0];
+
+
+    if(resultV1 == 1  || resultV2 == 1)
+        total = 1;
+    else
+        total = 0;
+    
+
+
     if (muestra) {
-        document.write("<br/> <h2>Vector "+vector+ "//" +vector2 +"</h2>");
+        document.write("<br/> <h2>Vector "+vector+ "//" +vector2 +"</h2> <br/>");
+        document.write("Re1: " + resultV1 + " Re2: " + resultV2 + " total: " + total +"<br/>");
+
     }
-    return (vector[0] && vector2[0]);
+
+
+
+    return (total);
 }
 
 function transformChromosome(chromosome, a , b , c){
@@ -181,12 +189,13 @@ function main() {
             var ca = transformChromosome(a,board[y][0],board[y][1],board[y][2]);
             var cb = transformChromosome(b,board[y][0],board[y][1],board[y][2]);
             getResult(ca,cb,1)
-            document.write(getResult(ca,cb));
+            document.write(" Y = " + board[y][3] + " Operación :" + getResult(ca,cb) + " a: " + board[y][0] + " b: "+ board[y][1] + " c: " + board[y][2]);
             
             if (getResult(ca,cb) == board[y][3]) {
+                //document.write("1")
                 points += 1;
-
             }
+
         
 
             
@@ -203,3 +212,8 @@ function main() {
 }
 
 main();
+//AaNcbba  //  NcOaacc
+// 0 0 1
+// A0N1001  // 010aacc
+
+
