@@ -17,6 +17,7 @@ var board = [
 var svg = d3.select("body").append("svg")
             .attr("width",600).attr("height",600)
             .append("g").attr("transform", "translate(50,50)");
+
 var data = [{"child": "John",  "parent": ""},
             {"child": "Aaron", "parent": "Kevin"},
             {"child": "Kevin", "parent": "John"},
@@ -163,14 +164,18 @@ function transformChromosome(chromosome, a , b , c){
 }
 
 function main() {
-    document.write("<br/> <h3> Poblaciones "+poblation+ "</h3>");
-    document.write(" <h3> _______________________________________________ </h3>");
+    document.write("<br/> <h3> <div> Poblaciones: <br/> ");
+    for (let y = 0; y < poblationSize; y++) {
+        document.write((y+1) + ") " + poblation[y] + "<br/><br/>");
+        
+    }
+    document.write("</div> <h3> _______________________________________________ </h3>");
 
 
-    for (let i = 0; i < 1 ; i++) {
+    for (let i = 0; i < poblationSize ; i++) {
 
         document.write("<br/> <h3> Gen "+poblation[i]+ "</h3>");
-        document.write(" <h3> _______________________________________________ </h3>");
+        document.write(" <h3> _______________________________________________ </h3> <div>");
 
 
         var a = poblation[i].substr(0,7);
@@ -203,7 +208,7 @@ function main() {
         }
         document.write("<br/> <h3> Puntuacion:  " +points +"</h3>");
         points = 0;
-        document.write(" <h3> _______________________________________________ </h3>");
+        document.write(" <h3> </div>_______________________________________________ </h3>");
 
         
     }
@@ -212,8 +217,4 @@ function main() {
 }
 
 main();
-//AaNcbba  //  NcOaacc
-// 0 0 1
-// A0N1001  // 010aacc
-
 

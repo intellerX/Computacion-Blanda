@@ -8,3 +8,30 @@ path
     fill:none;
     stroke:blue;
 }
+
+*
+{
+    text-align: center
+}
+
+h1 {
+    color: #6c2eb9;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: Arial;
+    text-transform: uppercase;
+  }
+
+  
+h3 {
+    color: #443963;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: Arial;
+  }
+
+  div {
+    border: 5px outset rgb(0, 0, 0);
+    background-color: rgb(203, 246, 255);
+    text-align: center;
+  }
