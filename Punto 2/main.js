@@ -1,5 +1,5 @@
 // Simbols
-var poblation = ["AbObcbcOAacaac", "AaNcbbaNcOaacc", "OONcbbbNcbcbca", "ANNcaacNcObaab" , "AbObcbOAacaac"];
+var poblation = ["AbObcbcOAacaac", "AaNcbbaNcOaacc", "AbObcbcOAacaac", "ANNcaacNcObaab" , "AbObcbOAacaac"];
 // ["A", "O", "N" , "a", "b", "c"];
 var a=0,b=0,c=0 , y=0;
 
@@ -26,7 +26,9 @@ var data = [{"child": "John",  "parent": ""},
             {"child": "Ann",   "parent": "John"},
             {"child": "Sarah", "parent": "Kevin"},
             {"child": "Mark",  "parent": "Ann"},
-            {"child": "Angel", "parent": "Sarah"}
+            {"child": "Angel", "parent": "Sarah"},
+            {"child": "Andy", "parent": "Hannah"},
+            {"child": "Carl", "parent": "Hannah"},
            ];
 
 var dataStructure = d3.stratify()
@@ -110,7 +112,40 @@ function operateVector(vector){
                 vector[i] = (vector[i+2] || vector[i+3]);
             }            
         }
+        //Case N-b
+        //Case ONc-bbba
+        //Case OONcb-bb 
         if (vector[i] == "N") {
+            if (is2Operator(vector[i-1]) || i == 0 )
+            {
+                if (is2Operator(vector[i-2])  )
+                {                        
+                    if (vector[i+3] == "1") {
+                        vector[i] = "0";
+                    }
+                    if (vector[i+3] == "0") {
+                        vector[i] = "1";
+                    }
+                }
+                else
+                {
+                    if (vector[i+2] == "1") {
+                        vector[i] = "0";
+                    }
+                    if (vector[i+2] == "0") {
+                        vector[i] = "1";
+                    }
+                }    
+            }
+            else{
+                if (vector[i+1] == "1") {
+                    vector[i] = "0";
+                }
+                if (vector[i+1] == "0") {
+                    vector[i] = "1";
+                }
+            }
+
             if (vector[i+1] == "1") {
                 vector[i] = "0";
             }
@@ -218,3 +253,6 @@ function main() {
 
 main();
 
+//OONcbbb // Ncbcbca
+//0 0 1 0
+//O ON 1000 // 0101000
