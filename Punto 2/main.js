@@ -13,7 +13,7 @@ var board = [
     [1,1,0,1],
     [1,1,1,1]
 ];
-
+/*
 var svg = d3.select("body").append("svg")
             .attr("width",600).attr("height",600)
             .append("g").attr("transform", "translate(50,50)");
@@ -56,7 +56,7 @@ connections.enter().append("path")
                 d.target.x + "," + (d.source.y+ d.target.y)/2 + " " +
                 d.target.x + "," + (d.target.y) + " "
             });
-
+*/
 var poblationSize = 5;
 poblationSize -= 1;
 
@@ -187,7 +187,6 @@ function getResult(vector , vector2 , muestra){
 function transformChromosome(chromosome, a , b , c){
     var vector = chromosome.split('');
     for(var i = 0; i < chromosome.length; i++){
-
         if(vector[i] == "a")
             vector[i] = a;
         if(vector[i] == "b")
@@ -196,6 +195,73 @@ function transformChromosome(chromosome, a , b , c){
             vector[i] = c;
     }
     return vector;
+}
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+function mutation(chromosome){
+
+    var chromo = chromosome.substr(0,3);
+    var some = chromosome.substr(9,14);
+   
+    var emos = reverseString(some);   
+
+    var union = "";
+    //window.alert("emos: " +emos + " some " + some );
+    union = union.concat(chromo + emos);
+    return (union); 
+
+}
+
+function crossMutateChromosome(poblation){
+
+    var r = Math.floor(Math.random() * 5);
+    var ca = poblation[r];
+    var r2 = Math.floor(Math.random() * 5);
+    var cb = poblation[r2];
+
+    while (r == r2) {
+        r2 = Math.floor(Math.random() * 5);
+    } 
+    var cb = poblation[r2];
+
+    var newChromosome1 = ca.substr(0,3) + cb.substr(4,13);
+    var newChromosome2 = cb.substr(0,3) + ca.substr(4,13);
+
+    document.write("<br/>  Nuevos cromosomas " +newChromosome1 + " " +newChromosome2 + "<br/> <br/>");
+
+    newChromosome1 = mutation(newChromosome1);
+    newChromosome2 = mutation(newChromosome2);
+
+    
+    document.write("<br/> Resultado de la mutación: " + newChromosome1+ " "+newChromosome2);        
+
+
+
+}
+
+function getPoints(chromosome){
+
+    var a = chromosome.substr(0,7);
+    var b = chromosome.substr(7,12);
+
+    points = 0;
+    for (let y = 0; y < 8; y++) {            
+
+        var ca = transformChromosome(a,board[y][0],board[y][1],board[y][2]);
+        var cb = transformChromosome(b,board[y][0],board[y][1],board[y][2]);
+        getResult(ca,cb)
+        document.write(" Y = " + board[y][3] + " Operación :" + getResult(ca,cb) + " a: " + board[y][0] + " b: "+ board[y][1] + " c: " + board[y][2]);
+        
+        if (getResult(ca,cb) == board[y][3]) {
+            //document.write("1")
+            points += 1;
+        }           
+    }
+    return points;
+
 }
 
 function main() {
@@ -234,12 +300,7 @@ function main() {
             if (getResult(ca,cb) == board[y][3]) {
                 //document.write("1")
                 points += 1;
-            }
-
-        
-
-            
-            
+            }           
         }
         document.write("<br/> <h3> Puntuacion:  " +points +"</h3>");
         points = 0;
@@ -248,7 +309,7 @@ function main() {
         
     }
 
-
+    crossMutateChromosome(poblation);
 }
 
 main();
