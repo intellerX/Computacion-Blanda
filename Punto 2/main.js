@@ -1,5 +1,5 @@
 // Simbols
-var poblation = ["AbObcbcOAacaac", "AaNcbbaNcOaacc", "AbObcbcOAacaac", "ANNcaacNcObaab" , "AbObcbOAacaac"];
+var poblation = ["NaObaacOAbbcca", "AaNcbbaNcOaacc", "OONcbbbNcbcbca", "ANNcaacNcObaab" , "AbObcbOAacaac"];
 // ["A", "O", "N" , "a", "b", "c"];
 var a=0,b=0,c=0 , y=0;
 
