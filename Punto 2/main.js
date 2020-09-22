@@ -236,7 +236,7 @@ function crossMutateChromosome(poblation){
     newChromosome2 = mutation(newChromosome2);
 
     
-    document.write("<br/> Resultado de la mutación: " + newChromosome1+ " "+newChromosome2);        
+    document.write("<br/> Resultado de la mutación: " + newChromosome1+newChromosome2);        
 
 
 
