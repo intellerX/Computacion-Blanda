@@ -13,7 +13,7 @@ var board = [
     [1,1,0,1],
     [1,1,1,1]
 ];
-/*
+
 var svg = d3.select("body").append("svg")
             .attr("width",600).attr("height",600)
             .append("g").attr("transform", "translate(50,50)");
@@ -56,7 +56,7 @@ connections.enter().append("path")
                 d.target.x + "," + (d.source.y+ d.target.y)/2 + " " +
                 d.target.x + "," + (d.target.y) + " "
             });
-*/
+
 var poblationSize = 5;
 poblationSize -= 1;
 
