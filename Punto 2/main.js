@@ -313,7 +313,3 @@ function main() {
 }
 
 main();
-
-//OONcbbb // Ncbcbca
-//0 0 1 0
-//O ON 1000 // 0101000
