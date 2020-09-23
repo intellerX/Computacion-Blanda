@@ -13,13 +13,13 @@
 
 <a href="https://planetachatbot.com/entendiendo-los-algoritmos-gen%C3%A9ticos-un-caso-de-uso-en-el-entorno-organizacional-a745c157fa8c"><img src="https://miro.medium.com/max/700/1*QlX_DwTAY9Q7UDS3tFb9sg.png" title="Genetic" alt="Genetic" align="center"></a>
 
-> <h3> Antecedentes </h3>
+### Antecedentes
 
 - ¿Qué es un algoritmo genético?
 - ¿Qué es la programación genética?
 - Diagrama de flujo del GEA
 
-> <h3> Instalación </h3>
+### Instalación
 
 - Instalación y ejecución del código
 
