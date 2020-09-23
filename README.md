@@ -2,7 +2,7 @@
 
 # Computacion Blanda - Algoritmos genéticos
 
-***Taller 1***
+<a href="https://drive.google.com/file/d/1lwEMj0V2lNcS-dbIXsNGyjzGjWPchRS7/view">***Taller 1***</a>
 
 ### Integrantes
 
