@@ -19,7 +19,7 @@
 - ¿Qué es la programación genética?
 - Diagrama de flujo del GEA
 
-> <h3> Código </h3>
+> <h3> Instalación </h3>
 
 - Instalación y ejecución del código
 
@@ -41,3 +41,10 @@ Se trata de una especialización de los algoritmos genéticos donde cada individ
 
 <a href="https://ibb.co/nwqkNFj"><img src="https://i.ibb.co/7SxydqK/GEA.png" alt="GEA" border="0"></a>
 
+---
+
+## Instalación
+
+### Clonar el repositorio
+
+- 
