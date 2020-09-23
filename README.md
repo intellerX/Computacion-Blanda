@@ -47,4 +47,8 @@ Se trata de una especialización de los algoritmos genéticos donde cada individ
 
 ### Clonar el repositorio
 
-- 
+- Para clonar el repositorio, utilizar el comando `git clone https://github.com/intellerX/Computacion-Blanda.git`.
+
+### ejecutar el código
+
+- en la carpeta **Punto 1** y **Punto 2**, ejecutar el archivo ***Index.html*** en el navegador.
