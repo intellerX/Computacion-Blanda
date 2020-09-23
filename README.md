@@ -51,4 +51,5 @@ Se trata de una especialización de los algoritmos genéticos donde cada individ
 
 ### ejecutar el código
 
-- en la carpeta **Punto 1** y **Punto 2**, ejecutar el archivo ***Index.html*** en el navegador.
+- Una vez clonado el repositorio, ejecutamos el comando `cd ruta_destino/Computacion-Blanda`
+- En la carpeta **Punto 1** y **Punto 2**, ejecutar el archivo ***Index.html*** en el navegador.
