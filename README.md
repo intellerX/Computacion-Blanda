@@ -1,4 +1,4 @@
-<a href="http://utp.edu.co"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Logo_U.T.P.png" title="UTPLogo" alt="UTPLogo" width="20%" height="20%"></a>
+<a href="http://utp.edu.co"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Logo_U.T.P.png" title="UTPLogo" alt="UTPLogo" width="20%" height="20%" align="right"></a>
 
 # Computacion Blanda - Algoritmos genéticos
 
@@ -9,7 +9,7 @@
 - <h3>Santiago Sanchez Pulgarín</h3>
 
 
-<a href="https://planetachatbot.com/entendiendo-los-algoritmos-gen%C3%A9ticos-un-caso-de-uso-en-el-entorno-organizacional-a745c157fa8c"><img src="https://miro.medium.com/max/700/1*QlX_DwTAY9Q7UDS3tFb9sg.png" title="Genetic" alt="Genetic"></a>
+<a href="https://planetachatbot.com/entendiendo-los-algoritmos-gen%C3%A9ticos-un-caso-de-uso-en-el-entorno-organizacional-a745c157fa8c"><img src="https://miro.medium.com/max/700/1*QlX_DwTAY9Q7UDS3tFb9sg.png" title="Genetic" alt="Genetic" align="center"></a>
 
 > <h3> Antecedentes </h3>
 
