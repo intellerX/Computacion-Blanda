@@ -1,5 +1,5 @@
 // Simbols
-var poblation = ["NaObaacOAbbcca", "AaNcbbaNcOaacc", "OONcbbbNcbcbca", "ANNcaacNcObaab" , "AbObcbOAacaac"];
+var poblation = ["NaObaacOAbbcca", "AaNcbbaNcOaacc", "AbObcbcOAacaac", "ANNcaacNcObaab" , "AAaccacNcaabab"];
 // ["A", "O", "N" , "a", "b", "c"];
 var a=0,b=0,c=0 , y=0;
 
@@ -236,7 +236,7 @@ function crossMutateChromosome(poblation){
     newChromosome2 = mutation(newChromosome2);
 
     
-    document.write("<br/> Resultado de la mutación: " + newChromosome1+newChromosome2);        
+    document.write("<br/> Resultado de la mutación: " + newChromosome1+newChromosome2);         
 
 
 
